@@ -1,0 +1,2 @@
+[test_group]
+localhost ansible_user=root

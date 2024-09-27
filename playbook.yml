@@ -1,0 +1,12 @@
+- name: Pre Setup
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: Include variables from {{ inventory_dir | basename  }}/host_vars/{{ inventory_hostname }}.yml
+      include_vars:
+        file: "{{ inventory_dir | basename  }}/host_vars/{{ inventory_hostname }}.yml"
+        hash_behaviour: "merge"
+        
+    - debug: var=testrole
+
+  tags: always
